@@ -1,7 +1,5 @@
 from __init__ import CURSOR, CONN
-from department import Department
 from employee import Employee
-
 
 class Review:
 
@@ -29,7 +27,7 @@ class Review:
             year INT,
             summary TEXT,
             employee_id INTEGER,
-            FOREIGN KEY (employee_id) REFERENCES employee(id))
+            FOREIGN KEY (employee_id) REFERENCES employees(id))
         """
         CURSOR.execute(sql)
         CONN.commit()
@@ -79,4 +77,3 @@ class Review:
     def get_all(cls):
         """Return a list containing one Review instance per table row"""
         pass
-
